@@ -1,0 +1,111 @@
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling adc.c...
+..\Core\Src\adc.c(1): warning C318: can't open file 'adc.h'
+..\Core\Src\adc.c(19): error C202: 'P1ASF': undefined identifier
+..\Core\Src\adc.c(20): error C202: 'ADC_RES': undefined identifier
+..\Core\Src\adc.c(21): error C202: 'ADC_RESL': undefined identifier
+..\Core\Src\adc.c(22): error C202: 'ADC_CONTR': undefined identifier
+..\Core\Src\adc.c(34): error C129: missing ';' before 'Get_ADC12bitResult'
+compiling gpio.c...
+..\Core\Src\gpio.c(1): warning C318: can't open file 'STC15W4Kxx.h'
+..\Core\Src\gpio.c(2): warning C318: can't open file 'gpio.h'
+..\Core\Src\gpio.c(6): error C202: 'P0M0': undefined identifier
+..\Core\Src\gpio.c(6): error C202: 'P0M1': undefined identifier
+..\Core\Src\gpio.c(7): error C202: 'P1M0': undefined identifier
+..\Core\Src\gpio.c(7): error C202: 'P1M1': undefined identifier
+..\Core\Src\gpio.c(8): error C202: 'P2M0': undefined identifier
+..\Core\Src\gpio.c(8): error C202: 'P2M1': undefined identifier
+..\Core\Src\gpio.c(9): error C202: 'P3M0': undefined identifier
+..\Core\Src\gpio.c(9): error C202: 'P3M1': undefined identifier
+..\Core\Src\gpio.c(10): error C202: 'P4M0': undefined identifier
+..\Core\Src\gpio.c(10): error C202: 'P4M1': undefined identifier
+..\Core\Src\gpio.c(11): error C202: 'P5M0': undefined identifier
+..\Core\Src\gpio.c(11): error C202: 'P5M1': undefined identifier
+compiling main.c...
+..\Core\Src\main.c(1): warning C318: can't open file 'STC15W4Kxx.h'
+..\Core\Src\main.c(2): warning C318: can't open file 'uart.h'
+..\Core\Src\main.c(3): warning C318: can't open file 'stdint.h'
+..\Core\Src\main.c(4): warning C318: can't open file 'delay.h'
+..\Core\Src\main.c(10): error C202: 'SCON': undefined identifier
+..\Core\Src\main.c(11): error C202: 'AUXR': undefined identifier
+..\Core\Src\main.c(12): error C202: 'AUXR': undefined identifier
+..\Core\Src\main.c(13): error C202: 'T2L': undefined identifier
+..\Core\Src\main.c(14): error C202: 'T2H': undefined identifier
+..\Core\Src\main.c(15): error C202: 'AUXR': undefined identifier
+..\Core\Src\main.c(17): error C202: 'ES': undefined identifier
+..\Core\Src\main.c(22): error C202: 'TI': undefined identifier
+..\Core\Src\main.c(24): error C202: 'TI': undefined identifier
+..\Core\Src\main.c(28): error C202: 'RI': undefined identifier
+..\Core\Src\main.c(30): error C202: 'RI': undefined identifier
+..\Core\Src\main.c(34): error C141: syntax error near 'dat', expected ')'
+..\Core\Src\main.c(38): error C202: 'SBUF': undefined identifier
+..\Core\Src\main.c(41): error C141: syntax error near '*', expected ')'
+..\Core\Src\main.c(43): error C202: 'sendstr': undefined identifier
+..\Core\Src\main.c(45): error C202: 'sendstr': undefined identifier
+..\Core\Src\main.c(51): error C202: 'SBUF': undefined identifier
+..\Core\Src\main.c(52): error C202: 'TI': undefined identifier
+..\Core\Src\main.c(53): error C202: 'TI': undefined identifier
+compiling timer.c...
+..\Core\Src\timer.c(1): warning C318: can't open file 'STC15W4Kxx.h'
+..\Core\Src\timer.c(2): warning C318: can't open file 'timer.h'
+..\Core\Src\timer.c(3): warning C318: can't open file 'stdint.h'
+..\Core\Src\timer.c(4): warning C318: can't open file 'key.h'
+..\Core\Src\timer.c(19): error C129: missing ';' before 'channel_num'
+compiling uart.c...
+..\Core\Src\uart.c(1): warning C318: can't open file 'STC15W4Kxx.h'
+..\Core\Src\uart.c(2): warning C318: can't open file 'uart.h'
+..\Core\Src\uart.c(3): warning C318: can't open file 'stdint.h'
+..\Core\Src\uart.c(4): warning C318: can't open file 'delay.h'
+..\Core\Src\uart.c(10): error C202: 'SCON': undefined identifier
+..\Core\Src\uart.c(11): error C202: 'AUXR': undefined identifier
+..\Core\Src\uart.c(12): error C202: 'AUXR': undefined identifier
+..\Core\Src\uart.c(13): error C202: 'T2L': undefined identifier
+..\Core\Src\uart.c(14): error C202: 'T2H': undefined identifier
+..\Core\Src\uart.c(15): error C202: 'AUXR': undefined identifier
+..\Core\Src\uart.c(17): error C202: 'ES': undefined identifier
+..\Core\Src\uart.c(22): error C202: 'TI': undefined identifier
+..\Core\Src\uart.c(24): error C202: 'TI': undefined identifier
+..\Core\Src\uart.c(28): error C202: 'RI': undefined identifier
+..\Core\Src\uart.c(30): error C202: 'RI': undefined identifier
+..\Core\Src\uart.c(34): error C141: syntax error near 'dat', expected ')'
+..\Core\Src\uart.c(38): error C202: 'SBUF': undefined identifier
+..\Core\Src\uart.c(41): error C141: syntax error near '*', expected ')'
+..\Core\Src\uart.c(43): error C202: 'sendstr': undefined identifier
+..\Core\Src\uart.c(45): error C202: 'sendstr': undefined identifier
+..\Core\Src\uart.c(51): error C202: 'SBUF': undefined identifier
+..\Core\Src\uart.c(52): error C202: 'TI': undefined identifier
+..\Core\Src\uart.c(53): error C202: 'TI': undefined identifier
+compiling key.c...
+..\BSP\Src\key.c(1): warning C318: can't open file 'STC15W4Kxx.h'
+..\BSP\Src\key.c(2): warning C318: can't open file 'key.h'
+..\BSP\Src\key.c(3): warning C318: can't open file 'stdint.h'
+..\BSP\Src\key.c(4): warning C318: can't open file 'timer.h'
+..\BSP\Src\key.c(5): warning C318: can't open file 'pwm.h'
+..\BSP\Src\key.c(6): warning C318: can't open file 'screen.h'
+..\BSP\Src\key.c(7): warning C318: can't open file 'delay.h'
+..\BSP\Src\key.c(8): warning C318: can't open file 'eeprom.h'
+..\BSP\Src\key.c(10): warning C318: can't open file 'sync.h'
+..\BSP\Src\key.c(16): error C129: missing ';' before 'wind_num'
+compiling sync.c...
+..\Emembed\Src\sync.c(1): warning C318: can't open file 'STC15W4Kxx.h'
+..\Emembed\Src\sync.c(2): warning C318: can't open file 'stdint.h'
+..\Emembed\Src\sync.c(3): warning C318: can't open file 'sync.h'
+..\Emembed\Src\sync.c(4): warning C318: can't open file 'timer.h'
+..\Emembed\Src\sync.c(5): warning C318: can't open file 'key.h'
+..\Emembed\Src\sync.c(6): warning C318: can't open file 'pwm.h'
+..\Emembed\Src\sync.c(7): warning C318: can't open file 'ntc.h'
+..\Emembed\Src\sync.c(8): warning C318: can't open file 'screen.h'
+..\Emembed\Src\sync.c(13): error C202: 'sync_bit': undefined identifier
+..\Emembed\Src\sync.c(16): error C202: 'external_24bit': undefined identifier
+..\Emembed\Src\sync.c(18): error C202: 'power_bit': undefined identifier
+..\Emembed\Src\sync.c(19): error C202: 'DIS_ON': undefined identifier
+..\Emembed\Src\sync.c(20): error C202: 'wind_bit': undefined identifier
+..\Emembed\Src\sync.c(21): error C202: 'delay_bit1': undefined identifier
+..\Emembed\Src\sync.c(22): error C202: 'delay_bit2': undefined identifier
+..\Emembed\Src\sync.c(26): error C202: 'delay_bit2': undefined identifier
+..\Emembed\Src\sync.c(27): error C202: 'power_bit': undefined identifier
+..\Emembed\Src\sync.c(28): error C202: 'DIS_OFF': undefined identifier
+..\Emembed\Src\sync.c(29): error C202: 'wind_bit': undefined identifier
+Target not created.
+Build Time Elapsed:  00:00:01
