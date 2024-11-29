@@ -1,209 +1,39 @@
 #include "timer.h"
-#include "gpio.h"
 
-#define TIM1 58400
-     
-bit zero_flag = 0;       //Õ‚≤ø÷–∂œ£®π˝¡„ºÏ≤‚£©et0œÏ”¶flag œÏ”¶∏≥÷µŒ™1
+void Tim0Init( void )         //11.0592Mhz  10ms
+{
+    AUXR &= 0x7F;			//ÂÆöÊó∂Âô®Êó∂Èíü12TÊ®°Âºè
+	TMOD &= 0xF0;			//ËÆæÁΩÆÂÆöÊó∂Âô®Ê®°Âºè
 
-// void Tim0Init()         //11.0592Mhz  1ms
-// {
-//     AUXR |= 0X80;       //–ﬁ∏ƒº∆ ˝ÀŸ¬ £¨∂® ±∆˜ ±÷”…Ë÷√Œ™12Tƒ£ Ω
-	
-// 	TMOD &= 0XF0;       //«Âø’TIM0–Ë“™≈‰÷√µƒµÕÀƒŒª£®µÕÀƒŒª «TIM0,∏ﬂÀƒŒª «TIM1£©
+	TL0 = 0x00;				//ËÆæÁΩÆÂÆöÊó∂ÂàùÂßãÂÄº
+	TH0 = 0xDC;				//ËÆæÁΩÆÂÆöÊó∂ÂàùÂßãÂÄº
 
-// 	TH0 = 0XCD;         // TH0 ∏ﬂÀƒŒª  TL0 µÕÀƒŒª
-// 	TL0 = 0XD4;         //Õ®π˝º∆À„µ√≥ˆµƒ÷µ£¨º∆À„π´ Ω‘⁄œ¬√Ê
-	
-// 	TF0 = 0;            //«Â≥˝TC0N-TF0  ÷–∂œ“Á≥ˆ±Í÷æ£¨“Á≥ˆ∫Û◊‘∂Ø÷√1£¨CPUœÏ”¶÷–∂œ∫Û÷√”≤º˛«Â0
-// 	TR0 = 1;            //TCON-TR0  TIM0ø™ ºº∆ ˝∆Ù∂Ø
+	TF0 = 0;				//Ê∏ÖÈô§TF0Ê†áÂøó
+	TR0 = 1;				//ÂÆöÊó∂Âô®0ÂºÄÂßãËÆ°Êó∂
 
-// 	ET0 = 1;            //¥Úø™IE-ET0£¨TIM0÷–∂œ
-// }
+	ET0 = 1;            //ÊâìÂºÄIE-ET0ÔºåTIM0‰∏≠Êñ≠
+}
 
-
-void Tim1Init()         //11.0592Mhz  10ms  16Œª ÷∂Ø◊∞‘ÿ
+void Tim1Init( void )            //11.0592Mhz  10ms  16‰ΩçÊâãÂä®Ë£ÖËΩΩ
 {   
-	AUXR &= 0xBF;       //∂® ±∆˜ ±÷”12Tƒ£ Ω
-	TMOD &= 0x0F;       //…Ë÷√∂® ±∆˜ƒ£ Ω
-	TMOD |= 0x10;       //…Ë÷√∂® ±∆˜ƒ£ Ω    ÷∂Ø/◊‘∂Øø™πÿ
+	AUXR &= 0xBF;                //ÂÆöÊó∂Âô®Êó∂Èíü12TÊ®°Âºè
+	TMOD &= 0x0F;                //ËÆæÁΩÆÂÆöÊó∂Âô®Ê®°Âºè
+	TMOD |= 0x10;                //ËÆæÁΩÆÂÆöÊó∂Âô®Ê®°Âºè   ÊâãÂä®/Ëá™Âä®ÂºÄÂÖ≥
 }
 
-void Tim3Init(void)		//10∫¡√Î@11.0592MHz
+void Tim3Init( void )            //10ÊØ´Áßí@11.0592MHz
 {
-	T4T3M &= 0xFD;      //∂® ±∆˜ ±÷”12Tƒ£ Ω
-	T3L = 0x00;         //…Ë÷√∂® ±≥ı º÷µ
-	T3H = 0xDC;         //…Ë÷√∂® ±≥ı º÷µ
-	T4T3M |= 0x08;      //∂® ±∆˜3ø™ ºº∆ ±
+	T4T3M &= 0xFD;               //ÂÆöÊó∂Âô®Êó∂Èíü12TÊ®°Âºè
+	T3L = 0x00;                  //ËÆæÁΩÆÂÆöÊó∂ÂàùÂßãÂÄº
+	T3H = 0xDC;                  //ËÆæÁΩÆÂÆöÊó∂ÂàùÂßãÂÄº
+	T4T3M |= 0x08;              //ÂÆöÊó∂Âô®3ÂºÄÂßãËÆ°Êó∂
     
-    IE2 |= 0x20; //¥Úø™IE2-ET2£¨TIM3÷–∂œ
+    IE2 |= 0x20;                //ÊâìÂºÄIE2-ET2ÔºåTIM3‰∏≠Êñ≠
 }
 
-void ET0ISR(void) interrupt 0 
+void ET0Init( void )
 {
-    tempchannel1 = tempchannel2 = tempchannel3 = 1;    
-        /*—” ±“∆œ‡*/
-    TL1 = TIM1;				//…Ë÷√∂® ±≥ı º÷µ
-	TH1 = TIM1>>8;				//…Ë÷√∂® ±≥ı º÷µ
-
-    zero_flag = 1;
-    
-    TR1 = 1;				//∂® ±∆˜1ø™ ºº∆ ±      
-    ET1 = 1; 
+    IT0 = 1;   //‰∏ãÈôçÊ≤øËß¶ÂèëËøáÈõ∂Ê£ÄÊµã‰ø°Âè∑
+    EX0 = 1;
 }
 
-// void Tim0Isr(void) interrupt 1 
-// {
-
-// }
-
-void Tim1Isr(void) interrupt 3 
-{
-
-    if((zero_flag == 1)&&(power_bit == 1))
-    {
-        switch(channel_num)
-        {
-            case 1: {tempchannel1=0; tempchannel2=1; tempchannel3=1;}break;
-            case 2: {tempchannel1=1; tempchannel2=0; tempchannel3=1;}break;
-            case 3: {tempchannel1=1; tempchannel2=1; tempchannel3=0;}break;
-            case 4: {tempchannel1=0; tempchannel2=0; tempchannel3=1;}break;
-            case 5: {tempchannel1=1; tempchannel2=0; tempchannel3=0;}break;
-            case 6: {tempchannel1=0; tempchannel2=1; tempchannel3=0;}break;
-            case 7: {tempchannel1=0; tempchannel2=0; tempchannel3=0;}break;
-        }
-            /*∑¢ÀÕ“ª∏ˆ10usµƒ¬ˆ≥Â*/
-            zero_flag = 0; 
-
-            TL1 = 0xF7;				//…Ë÷√∂® ±≥ı º÷µ
-            TH1 = 0xFF;				//…Ë÷√∂® ±≥ı º÷µ
-    }
-  
-    else
-    {
-        tempchannel1 = tempchannel2 = tempchannel3 = 1;     //1-0-1µƒ¬ˆ≥Â 2us
-        TR1 = 0;				//∂® ±∆˜πÿ±’º∆ ±      
-        ET1 = 0; 
-    }
-}
-
-void Tim3Isr(void) interrupt 19 
-{
-    static uint8_t buzzer_continue_cnt = 0;
-    static uint8_t sacn_cnt = 0;
-    static uint8_t key_cnt = 0;
-    static uint8_t sync_delay_cnt = 0;
-    static uint8_t temp_delay_cnt = 0;
-    static uint8_t fan_rotate_cnt = 0;
-    static uint8_t temp_rotate_cnt = 0;
-    static uint16_t fan_delay_cnt = 0;
-    
-    if((delay_bit1 == 1)&&(delay_bit2 == 1))
-    {
-        fan_delay_cnt++;
-        if(fan_delay_cnt==12000)
-        {
-            fan_delay_cnt = 0;
-            delay_bit1 = 0;
-            delay_bit2 = 0;
-            delay_bit3 = 1;
-        }
-    }
-    if((delay_bit1&delay_bit2)==0)
-    {
-        fan_delay_cnt = 0;
-    }
-//    if((delay_bit1 == 1)&&(delay_bit2 == 0))
-//    {
-//        fan_delay_cnt = 0;
-//    }
-    fan_rotate_cnt++;
-    if(fan_rotate_cnt>15)
-    {
-        fan_dis_bit = ~fan_dis_bit;
-        fan_rotate_cnt = 0;
-    }
-    
-    temp_rotate_cnt++;
-    if(temp_rotate_cnt>50)
-    {
-        temp_dis_bit = ~temp_dis_bit;
-        temp_rotate_cnt = 0;
-    }
-    
-    key_cnt++;
-    if(key_cnt>5)
-    {
-        key_cnt=0; 
-        key_val = (P0&0X0f);
-    }
-    
-    if(sync_delay_bit == 1)
-    {
-        sync_delay_cnt++;
-        if(sync_delay_cnt>150)
-        {
-            sync_delay_bit = 0;
-            sync_delay_cnt = 0;
-        }
-    }
-
-    if(temp_delay_bit == 1)
-    {
-        temp_delay_cnt++;
-        if(temp_delay_cnt>150)
-        {
-            temp_delay_bit = 0;
-            temp_delay_cnt = 0;
-        }
-    }
-    
-    if(buzzer_bit==0)
-    {
-        buzzer_continue_cnt++;
-        if(buzzer_continue_cnt>10)
-        {
-            buzzer_continue_cnt=0; 
-            buzzer=buzzer_bit=1;
-        }
-    } 
-    
-    if(scan_stop_bit == 1)
-    {
-        sacn_cnt++;
-        if(sacn_cnt>10)
-        {
-            scan_start_bit = 1;
-            scan_stop_bit = 0;
-            sacn_cnt = 0;
-        }
-    }
-       
-    if(P07==0)
-    {
-        external_24bit = 1;   //24VΩ”»Î
-        previous_value = 1;
-    }
-    if(P07==1)
-    {
-        external_24bit = 0;
-        previous_value = 0;
-    }
-}
-
-void power_crl(uint8_t power_num)
-{ 
-    if(power_bit==1)
-    {
-        ET1 = 1;
-    }
-    else
-    {
-        ET1 = 0;
-    }
-    
-    tim1_t = power_num*64+58400;
-    
-//    TL1 = tim1_t;                   //…Ë÷√∂® ±≥ı º÷µ
-//    TH1 = tim1_t>>8;				//…Ë÷√∂® ±≥ı º÷µ
-
-}

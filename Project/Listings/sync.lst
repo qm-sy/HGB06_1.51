@@ -1,0 +1,58 @@
+C51 COMPILER V9.60.7.0   SYNC                                                              11/29/2024 16:35:20 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SYNC
+OBJECT MODULE PLACED IN ..\Output\sync.obj
+COMPILER INVOKED BY: D:\APP\Keil_v5\C51\BIN\C51.EXE ..\Emembed\Src\sync.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..\Drive
+                    -rs;..\BSP\Inc;..\Core\Inc;..\Emembed\Inc;..\Middlewares;..\SYSTEM) DEBUG OBJECTEXTEND PRINT(.\Listings\sync.lst) OBJECT(
+                    -..\Output\sync.obj)
+
+line level    source
+
+   1          #include "sync.h"
+   2          
+   3          void sync_judge()
+   4          {
+   5   1          if(sync_bit == 1)
+*** ERROR C202 IN LINE 5 OF ..\Emembed\Src\sync.c: 'sync_bit': undefined identifier
+   6   1          {
+   7   2              
+   8   2              if (external_24bit == 1)
+*** ERROR C202 IN LINE 8 OF ..\Emembed\Src\sync.c: 'external_24bit': undefined identifier
+   9   2              {
+  10   3                  power_bit = 1;
+  11   3                  wind_bit  = 1;
+  12   3                  sun_dis(DIS_ON);
+  13   3              } else {
+  14   3                  power_bit = 0;
+  15   3                  wind_bit  = 0;
+  16   3                  sun_dis(DIS_OFF);
+  17   3              }
+  18   2          } else {
+  19   2              power_bit = 1;
+  20   2              wind_bit  = 1; 
+  21   2              sun_dis(DIS_ON);
+  22   2              
+  23   2          }
+  24   1          power_crl(power_num);
+*** ERROR C202 IN LINE 24 OF ..\Emembed\Src\sync.c: 'power_num': undefined identifier
+  25   1          wind_crl(wind_num);         //刷新风力和功率
+*** ERROR C202 IN LINE 25 OF ..\Emembed\Src\sync.c: 'wind_num': undefined identifier
+  26   1      }
+  27          
+  28          
+  29          
+  30          void external24V_change_listen()
+  31          {
+  32   1          static external24V_statu = 0;
+  33   1          if( external24V_statu != external24_flag )
+*** ERROR C202 IN LINE 33 OF ..\Emembed\Src\sync.c: 'external24_flag': undefined identifier
+  34   1          {
+  35   2              sync_judge();
+  36   2              external24V_statu = external24_flag;
+*** ERROR C202 IN LINE 36 OF ..\Emembed\Src\sync.c: 'external24_flag': undefined identifier
+  37   2          }
+  38   1      
+  39   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)

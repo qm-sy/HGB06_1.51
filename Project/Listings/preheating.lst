@@ -1,0 +1,40 @@
+C51 COMPILER V9.60.7.0   PREHEATING                                                        11/29/2024 16:35:20 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE PREHEATING
+OBJECT MODULE PLACED IN ..\Output\preheating.obj
+COMPILER INVOKED BY: D:\APP\Keil_v5\C51\BIN\C51.EXE ..\Emembed\Src\preheating.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..
+                    -\Drivers;..\BSP\Inc;..\Core\Inc;..\Emembed\Inc;..\Middlewares;..\SYSTEM) DEBUG OBJECTEXTEND PRINT(.\Listings\preheating.
+                    -lst) OBJECT(..\Output\preheating.obj)
+
+line level    source
+
+   1          #include "preheating.h"
+   2          
+   3          void temp_listen()
+   4          {   
+*** ERROR C132 IN LINE 4 OF ..\Emembed\Src\preheating.c: 'temp_listen': not in formal parameter list
+*** ERROR C141 IN LINE 4 OF ..\Emembed\Src\preheating.c: syntax error near '{', expected ';'
+   5              static uint8_t temp; 
+*** ERROR C136 IN LINE 5 OF ..\Emembed\Src\preheating.c: 'temp': 'void' on variable
+*** ERROR C132 IN LINE 5 OF ..\Emembed\Src\preheating.c: 'temp': not in formal parameter list
+   6          
+   7              temp = (uint8_t)get_temp(6);
+*** ERROR C244 IN LINE 7 OF ..\Emembed\Src\preheating.c: 'temp': can't initialize, bad type or class
+*** ERROR C132 IN LINE 7 OF ..\Emembed\Src\preheating.c: 'temp': not in formal parameter list
+   8              if( temp >= temp_num )
+*** ERROR C141 IN LINE 8 OF ..\Emembed\Src\preheating.c: syntax error near 'if', expected 'hdata'
+*** ERROR C141 IN LINE 8 OF ..\Emembed\Src\preheating.c: syntax error near '>=', expected ')'
+*** ERROR C129 IN LINE 8 OF ..\Emembed\Src\preheating.c: missing ';' before ')'
+   9              {
+  10                  alarm_dis(DIS_ON);
+  11                  cooling_fan = 1;
+  12                  buzzer = temp_blink_flag;
+  13              } else {
+  14                      alarm_dis(DIS_OFF);
+  15                      cooling_fan = 0;
+  16                      buzzer = 1;
+  17              }
+  18          }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  9 ERROR(S)

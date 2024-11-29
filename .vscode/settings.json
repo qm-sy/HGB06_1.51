@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "ntc.h": "c",
+        "adc.h": "c",
+        "sys.h": "c",
+        "delay.h": "c",
+        "gpio.h": "c",
+        "timer.h": "c",
+        "uart.h": "c",
+        "eeprom.h": "c",
+        "pwm.h": "c",
+        "serial_comport.h": "c",
+        "key.h": "c",
+        "screen.h": "c",
+        "interrupt.h": "c",
+        "power_crl.h": "c",
+        "eeprom_read_write.h": "c",
+        "wind_crl.h": "c",
+        "sync.h": "c",
+        "preheating.h": "c",
+        "main.h": "c"
+    }
+}

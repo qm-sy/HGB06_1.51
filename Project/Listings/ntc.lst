@@ -1,0 +1,98 @@
+C51 COMPILER V9.60.7.0   NTC                                                               11/29/2024 16:35:19 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE NTC
+OBJECT MODULE PLACED IN ..\Output\ntc.obj
+COMPILER INVOKED BY: D:\APP\Keil_v5\C51\BIN\C51.EXE ..\BSP\Src\ntc.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..\Drivers;..
+                    -\BSP\Inc;..\Core\Inc;..\Emembed\Inc;..\Middlewares;..\SYSTEM) DEBUG OBJECTEXTEND PRINT(.\Listings\ntc.lst) OBJECT(..\Out
+                    -put\ntc.obj)
+
+line level    source
+
+   1          #include "ntc.h"
+   2          
+   3          #define NTCTabNum 121
+   4          
+   5          //      MF52E 10K at 25    B = 3950    ADC = 12 bits
+   6          static MF52E_tab[NTCTabNum]={
+   7              282,/* 0 */
+   8              291,/* 1 */     300,/* 2 */     309,/* 3 */     318,/* 3 */     327,/* 5 */
+   9              337,/* 6 */     346,/* 7 */     356,/* 8 */     366,/* 9 */     375,/* 10 */
+  10              385,/* 11 */    395,/* 12 */    404,/* 13 */    414,/* 14 */    424,/* 15 */
+  11              434,/* 16 */    444,/* 17 */    454,/* 18 */    463,/* 19 */    473,/* 20 */
+  12              483,/* 21 */    493,/* 22 */    502,/* 23 */    512,/* 24 */    522,/* 25 */
+  13              531,/* 26 */    541,/* 27 */    550,/* 28 */    559,/* 29 */    568,/* 30 */
+  14              578,/* 31 */    587,/* 32 */    596,/* 33 */    604,/* 34 */    613,/* 35 */
+  15              622,/* 36 */    630,/* 37 */    639,/* 38 */    647,/* 39 */    655,/* 40 */
+  16              663,/* 41 */    671,/* 42 */    679,/* 43 */    687,/* 44 */    694,/* 45 */
+  17              702,/* 46 */    709,/* 47 */    716,/* 48 */    723,/* 49 */    730,/* 50 */
+  18              737,/* 51 */    743,/* 52 */    750,/* 53 */    756,/* 54 */    763,/* 55 */
+  19              769,/* 56 */    775,/* 57 */    781,/* 58 */    786,/* 59 */    792,/* 60 */
+  20              797,/* 61 */    803,/* 62 */    808,/* 63 */    813,/* 64 */    818,/* 65 */
+  21              823,/* 66 */    828,/* 67 */    833,/* 68 */    837,/* 69 */    842,/* 70 */
+  22              846,/* 71 */    850,/* 72 */    854,/* 73 */    858,/* 74 */    862,/* 75 */
+  23              866,/* 76 */    870,/* 77 */    874,/* 78 */    877,/* 79 */    881,/* 80 */
+  24              884,/* 81 */    888,/* 82 */    891,/* 83 */    894,/* 84 */    897,/* 85 */
+  25              900,/* 86 */    903,/* 87 */    906,/* 88 */    909,/* 89 */    911,/* 90 */
+  26              914,/* 91 */    917,/* 92 */    919,/* 93 */    921,/* 94 */    924,/* 95 */
+  27              926,/* 96 */    928,/* 97 */    931,/* 98 */    933,/* 99 */    935,/* 100 */
+  28              937,/* 101 */   939,/* 102 */   941,/* 103 */   943,/* 104 */   945,/* 105 */
+  29              946,/* 106 */   948,/* 107 */   950,/* 108 */   952,/* 109 */   953,/* 110 */
+  30              955,/* 111 */   956,/* 112 */   958,/* 113 */   959,/* 114 */   961,/* 115 */
+  31              962,/* 116 */   964,/* 117 */   965,/* 118 */   966,/* 119 */   967,/* 120 */
+  32          };       
+  33          
+  34          /**
+  35           * @brief 查表 找到adc_val对应的temp
+  36           *
+  37           * @param[in] temp_tab 对照表
+  38           * @param[in] tab_num 表元素个数
+  39           * @param[in] adc_val adc_val
+  40           * 
+  41           * @return  temp
+  42           * 
+  43           * */
+  44          
+  45          uint8_t LookupTable( uint16_t *temp_tab, uint8_t tab_num, uint16_t adc_val )
+  46          {
+  47   1                      uint8_t i,temp_val = 0;
+  48   1              
+  49   1                      for( i = 0; i < (tab_num-1); i++ )
+  50   1                      {
+  51   2                                      if(( adc_val >= temp_tab[i] ) && ( adc_val < temp_tab[i+1]) )
+  52   2                                      temp_val = i;   
+  53   2                      }
+C51 COMPILER V9.60.7.0   NTC                                                               11/29/2024 16:35:19 PAGE 2   
+
+  54   1                      return temp_val;
+  55   1      }
+  56          
+  57          /**
+  58           * @brief 取10次adc_val均值对应的temp
+  59           *
+  60           * @param[in] channle_x ntc通道1~6 
+  61           * 
+  62           * @return  temp :最终温度
+  63           * 
+  64           * */
+  65          
+  66          uint16_t get_temp( uint8_t channle_x )
+  67          {
+  68   1          uint8_t t;
+  69   1          uint16_t adc_val= 0;
+  70   1          uint16_t temp;
+  71   1          /* 1, 取10次adc_val                           */
+  72   1          for( t = 0; t < 10; t++ )
+  73   1                      {
+  74   2                              adc_val += Get_ADC12bitResult(channle_x);
+*** WARNING C206 IN LINE 74 OF ..\BSP\Src\ntc.c: 'Get_ADC12bitResult': missing function-prototype
+*** ERROR C267 IN LINE 74 OF ..\BSP\Src\ntc.c: 'Get_ADC12bitResult': requires ANSI-style prototype
+  75   2                      }              
+  76   1          adc_val = adc_val/10;
+  77   1      
+  78   1          /* 2, 查表，找到对应温度值                     */
+  79   1          temp = LookupTable( MF52E_tab, NTCTabNum, adc_val );
+  80   1          return temp;
+  81   1      }
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  1 ERROR(S)

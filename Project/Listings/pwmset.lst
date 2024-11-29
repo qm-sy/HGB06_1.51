@@ -1,0 +1,37 @@
+C51 COMPILER V9.60.7.0   PWMSET                                                            11/29/2024 16:35:19 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE PWMSET
+OBJECT MODULE PLACED IN ..\Output\pwmset.obj
+COMPILER INVOKED BY: D:\APP\Keil_v5\C51\BIN\C51.EXE ..\BSP\Src\pwmset.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..\Drivers
+                    -;..\BSP\Inc;..\Core\Inc;..\Emembed\Inc;..\Middlewares;..\SYSTEM) DEBUG OBJECTEXTEND PRINT(.\Listings\pwmset.lst) OBJECT(
+                    -..\Output\pwmset.obj)
+
+line level    source
+
+   1          #include "pwmset.h"
+   2          
+   3          void PWMSet( uint16_t num )
+   4          {
+   5   1          PWMStart();
+   6   1          PWM5T2 = num;
+   7   1      }
+   8          
+   9          void PWMStart (void )
+  10          {
+  11   1          PWMCR = 0X88;
+  12   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     31    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----       2
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

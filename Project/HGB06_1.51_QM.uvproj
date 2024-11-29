@@ -49,7 +49,7 @@
           <OutputName>HGB06_1.51_QM</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -426,6 +426,16 @@
               <FileType>1</FileType>
               <FilePath>..\Core\Src\delay.c</FilePath>
             </File>
+            <File>
+              <FileName>eeprom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\eeprom.c</FilePath>
+            </File>
+            <File>
+              <FileName>pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\pwm.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -447,14 +457,34 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSP\Src\key.c</FilePath>
-            </File>
-            <File>
               <FileName>ntc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSP\Src\ntc.c</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Src\interrupt.c</FilePath>
+            </File>
+            <File>
+              <FileName>serial_comport.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Src\serial_comport.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Src\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>pwmset.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Src\pwmset.c</FilePath>
+            </File>
+            <File>
+              <FileName>screen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\BSP\Src\screen.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -475,6 +505,36 @@
               <FileName>sync.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Emembed\Src\sync.c</FilePath>
+            </File>
+            <File>
+              <FileName>eeprom_read_write.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Emembed\Src\eeprom_read_write.c</FilePath>
+            </File>
+            <File>
+              <FileName>electric_crl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Emembed\Src\electric_crl.c</FilePath>
+            </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Emembed\Src\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>power_crl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Emembed\Src\power_crl.c</FilePath>
+            </File>
+            <File>
+              <FileName>preheating.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Emembed\Src\preheating.c</FilePath>
+            </File>
+            <File>
+              <FileName>wind_crl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Emembed\Src\wind_crl.c</FilePath>
             </File>
           </Files>
         </Group>

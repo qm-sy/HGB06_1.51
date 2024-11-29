@@ -8,104 +8,174 @@ compiling adc.c...
 ..\Core\Src\adc.c(22): error C202: 'ADC_CONTR': undefined identifier
 ..\Core\Src\adc.c(34): error C129: missing ';' before 'Get_ADC12bitResult'
 compiling gpio.c...
-..\Core\Src\gpio.c(1): warning C318: can't open file 'STC15W4Kxx.h'
-..\Core\Src\gpio.c(2): warning C318: can't open file 'gpio.h'
-..\Core\Src\gpio.c(6): error C202: 'P0M0': undefined identifier
-..\Core\Src\gpio.c(6): error C202: 'P0M1': undefined identifier
-..\Core\Src\gpio.c(7): error C202: 'P1M0': undefined identifier
-..\Core\Src\gpio.c(7): error C202: 'P1M1': undefined identifier
-..\Core\Src\gpio.c(8): error C202: 'P2M0': undefined identifier
-..\Core\Src\gpio.c(8): error C202: 'P2M1': undefined identifier
-..\Core\Src\gpio.c(9): error C202: 'P3M0': undefined identifier
-..\Core\Src\gpio.c(9): error C202: 'P3M1': undefined identifier
-..\Core\Src\gpio.c(10): error C202: 'P4M0': undefined identifier
-..\Core\Src\gpio.c(10): error C202: 'P4M1': undefined identifier
-..\Core\Src\gpio.c(11): error C202: 'P5M0': undefined identifier
-..\Core\Src\gpio.c(11): error C202: 'P5M1': undefined identifier
 compiling main.c...
-..\Core\Src\main.c(1): warning C318: can't open file 'STC15W4Kxx.h'
-..\Core\Src\main.c(2): warning C318: can't open file 'uart.h'
-..\Core\Src\main.c(3): warning C318: can't open file 'stdint.h'
-..\Core\Src\main.c(4): warning C318: can't open file 'delay.h'
-..\Core\Src\main.c(10): error C202: 'SCON': undefined identifier
-..\Core\Src\main.c(11): error C202: 'AUXR': undefined identifier
-..\Core\Src\main.c(12): error C202: 'AUXR': undefined identifier
-..\Core\Src\main.c(13): error C202: 'T2L': undefined identifier
-..\Core\Src\main.c(14): error C202: 'T2H': undefined identifier
-..\Core\Src\main.c(15): error C202: 'AUXR': undefined identifier
-..\Core\Src\main.c(17): error C202: 'ES': undefined identifier
-..\Core\Src\main.c(22): error C202: 'TI': undefined identifier
-..\Core\Src\main.c(24): error C202: 'TI': undefined identifier
-..\Core\Src\main.c(28): error C202: 'RI': undefined identifier
-..\Core\Src\main.c(30): error C202: 'RI': undefined identifier
-..\Core\Src\main.c(34): error C141: syntax error near 'dat', expected ')'
-..\Core\Src\main.c(38): error C202: 'SBUF': undefined identifier
-..\Core\Src\main.c(41): error C141: syntax error near '*', expected ')'
-..\Core\Src\main.c(43): error C202: 'sendstr': undefined identifier
-..\Core\Src\main.c(45): error C202: 'sendstr': undefined identifier
-..\Core\Src\main.c(51): error C202: 'SBUF': undefined identifier
-..\Core\Src\main.c(52): error C202: 'TI': undefined identifier
-..\Core\Src\main.c(53): error C202: 'TI': undefined identifier
 compiling timer.c...
-..\Core\Src\timer.c(1): warning C318: can't open file 'STC15W4Kxx.h'
-..\Core\Src\timer.c(2): warning C318: can't open file 'timer.h'
-..\Core\Src\timer.c(3): warning C318: can't open file 'stdint.h'
-..\Core\Src\timer.c(4): warning C318: can't open file 'key.h'
-..\Core\Src\timer.c(19): error C129: missing ';' before 'channel_num'
+..\Core\Inc\timer.h(16): error C202: 'P1': undefined identifier
+..\Core\Inc\timer.h(17): error C202: 'P2': undefined identifier
+..\Core\Inc\timer.h(18): error C202: 'P2': undefined identifier
+..\Core\Src\timer.c(26): error C202: 'AUXR': undefined identifier
+..\Core\Src\timer.c(27): error C202: 'TMOD': undefined identifier
+..\Core\Src\timer.c(28): error C202: 'TMOD': undefined identifier
+..\Core\Src\timer.c(33): error C202: 'T4T3M': undefined identifier
+..\Core\Src\timer.c(34): error C202: 'T3L': undefined identifier
+..\Core\Src\timer.c(35): error C202: 'T3H': undefined identifier
+..\Core\Src\timer.c(36): error C202: 'T4T3M': undefined identifier
+..\Core\Src\timer.c(38): error C202: 'IE2': undefined identifier
+..\Core\Src\timer.c(43): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(45): error C202: 'TL1': undefined identifier
+..\Core\Src\timer.c(46): error C202: 'TH1': undefined identifier
+..\Core\Src\timer.c(50): error C202: 'TR1': undefined identifier
+..\Core\Src\timer.c(51): error C202: 'ET1': undefined identifier
+..\Core\Src\timer.c(66): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(66): error C202: 'tempchannel2': undefined identifier
+..\Core\Src\timer.c(66): error C202: 'tempchannel3': undefined identifier
+..\Core\Src\timer.c(67): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(67): error C202: 'tempchannel2': undefined identifier
+..\Core\Src\timer.c(67): error C202: 'tempchannel3': undefined identifier
+..\Core\Src\timer.c(68): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(68): error C202: 'tempchannel2': undefined identifier
+..\Core\Src\timer.c(68): error C202: 'tempchannel3': undefined identifier
+..\Core\Src\timer.c(69): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(69): error C202: 'tempchannel2': undefined identifier
+..\Core\Src\timer.c(69): error C202: 'tempchannel3': undefined identifier
+..\Core\Src\timer.c(70): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(70): error C202: 'tempchannel2': undefined identifier
+..\Core\Src\timer.c(70): error C202: 'tempchannel3': undefined identifier
+..\Core\Src\timer.c(71): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(71): error C202: 'tempchannel2': undefined identifier
+..\Core\Src\timer.c(71): error C202: 'tempchannel3': undefined identifier
+..\Core\Src\timer.c(72): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(72): error C202: 'tempchannel2': undefined identifier
+..\Core\Src\timer.c(72): error C202: 'tempchannel3': undefined identifier
+..\Core\Src\timer.c(77): error C202: 'TL1': undefined identifier
+..\Core\Src\timer.c(78): error C202: 'TH1': undefined identifier
+..\Core\Src\timer.c(83): error C202: 'tempchannel1': undefined identifier
+..\Core\Src\timer.c(84): error C202: 'TR1': undefined identifier
+..\Core\Src\timer.c(85): error C202: 'ET1': undefined identifier
+..\Core\Src\timer.c(137): error C202: 'key_val': undefined identifier
+..\Core\Src\timer.c(140): error C202: 'sync_delay_bit': undefined identifier
+..\Core\Src\timer.c(145): error C202: 'sync_delay_bit': undefined identifier
+..\Core\Src\timer.c(150): error C202: 'temp_delay_bit': undefined identifier
+..\Core\Src\timer.c(155): error C202: 'temp_delay_bit': undefined identifier
+..\Core\Src\timer.c(166): error C202: 'buzzer': undefined identifier
+..\Core\Src\timer.c(181): error C202: 'P07': undefined identifier
+..\Core\Src\timer.c(186): error C202: 'P07': undefined identifier
+..\Core\Src\timer.c(197): error C202: 'ET1': undefined identifier
+..\Core\Src\timer.c(201): error C202: 'ET1': undefined identifier
+..\Core\Src\timer.c(204): error C202: 'tim1_t': undefined identifier
 compiling uart.c...
-..\Core\Src\uart.c(1): warning C318: can't open file 'STC15W4Kxx.h'
-..\Core\Src\uart.c(2): warning C318: can't open file 'uart.h'
-..\Core\Src\uart.c(3): warning C318: can't open file 'stdint.h'
-..\Core\Src\uart.c(4): warning C318: can't open file 'delay.h'
-..\Core\Src\uart.c(10): error C202: 'SCON': undefined identifier
-..\Core\Src\uart.c(11): error C202: 'AUXR': undefined identifier
+..\Core\Src\uart.c(7): error C202: 'SCON': undefined identifier
+..\Core\Src\uart.c(8): error C202: 'AUXR': undefined identifier
+..\Core\Src\uart.c(9): error C202: 'AUXR': undefined identifier
+..\Core\Src\uart.c(10): error C202: 'T2L': undefined identifier
+..\Core\Src\uart.c(11): error C202: 'T2H': undefined identifier
 ..\Core\Src\uart.c(12): error C202: 'AUXR': undefined identifier
-..\Core\Src\uart.c(13): error C202: 'T2L': undefined identifier
-..\Core\Src\uart.c(14): error C202: 'T2H': undefined identifier
-..\Core\Src\uart.c(15): error C202: 'AUXR': undefined identifier
-..\Core\Src\uart.c(17): error C202: 'ES': undefined identifier
-..\Core\Src\uart.c(22): error C202: 'TI': undefined identifier
-..\Core\Src\uart.c(24): error C202: 'TI': undefined identifier
-..\Core\Src\uart.c(28): error C202: 'RI': undefined identifier
-..\Core\Src\uart.c(30): error C202: 'RI': undefined identifier
-..\Core\Src\uart.c(34): error C141: syntax error near 'dat', expected ')'
-..\Core\Src\uart.c(38): error C202: 'SBUF': undefined identifier
-..\Core\Src\uart.c(41): error C141: syntax error near '*', expected ')'
-..\Core\Src\uart.c(43): error C202: 'sendstr': undefined identifier
-..\Core\Src\uart.c(45): error C202: 'sendstr': undefined identifier
-..\Core\Src\uart.c(51): error C202: 'SBUF': undefined identifier
-..\Core\Src\uart.c(52): error C202: 'TI': undefined identifier
-..\Core\Src\uart.c(53): error C202: 'TI': undefined identifier
+..\Core\Src\uart.c(14): error C202: 'ES': undefined identifier
+..\Core\Src\uart.c(19): error C202: 'TI': undefined identifier
+..\Core\Src\uart.c(21): error C202: 'TI': undefined identifier
+..\Core\Src\uart.c(25): error C202: 'RI': undefined identifier
+..\Core\Src\uart.c(27): error C202: 'RI': undefined identifier
+..\Core\Src\uart.c(31): error C141: syntax error near 'dat', expected ')'
+compiling delay.c...
+..\Core\Src\delay.c(12): error C141: syntax error near 'time', expected ')'
+..\Core\Src\delay.c(14): error C202: 'uint8_t': undefined identifier
+..\Core\Src\delay.c(14): error C141: syntax error near 'i', expected ';'
+..\Core\Src\delay.c(15): error C202: 'time': undefined identifier
 compiling key.c...
-..\BSP\Src\key.c(1): warning C318: can't open file 'STC15W4Kxx.h'
-..\BSP\Src\key.c(2): warning C318: can't open file 'key.h'
-..\BSP\Src\key.c(3): warning C318: can't open file 'stdint.h'
-..\BSP\Src\key.c(4): warning C318: can't open file 'timer.h'
 ..\BSP\Src\key.c(5): warning C318: can't open file 'pwm.h'
 ..\BSP\Src\key.c(6): warning C318: can't open file 'screen.h'
-..\BSP\Src\key.c(7): warning C318: can't open file 'delay.h'
-..\BSP\Src\key.c(8): warning C318: can't open file 'eeprom.h'
-..\BSP\Src\key.c(10): warning C318: can't open file 'sync.h'
-..\BSP\Src\key.c(16): error C129: missing ';' before 'wind_num'
+..\BSP\Src\key.c(43): warning C206: 'delay_ms': missing function-prototype
+..\BSP\Src\key.c(43): error C267: 'delay_ms': requires ANSI-style prototype
+..\BSP\Src\key.c(105): error C202: 'DIS_ON': undefined identifier
+compiling ntc.c...
+..\BSP\Inc\ntc.h(15): error C202: 'P5': undefined identifier
+..\BSP\Src\ntc.c(8): error C141: syntax error near ',', expected 'sizeof'
+..\BSP\Src\ntc.c(46): error C141: syntax error near '{', expected ';'
+..\BSP\Src\ntc.c(49): error C141: syntax error near 'for', expected 'hdata'
+..\BSP\Src\ntc.c(49): error C141: syntax error near '=', expected ')'
+..\BSP\Src\ntc.c(49): error C129: missing ';' before '<'
+compiling interrupt.c...
+..\BSP\Inc\interrupt.h(15): error C202: 'P5': undefined identifier
+..\BSP\Src\interrupt.c(2): warning C318: can't open file 'adc.h'
+..\BSP\Src\interrupt.c(4): error C202: 'P1': undefined identifier
+..\BSP\Src\interrupt.c(5): error C202: 'P2': undefined identifier
+..\BSP\Src\interrupt.c(6): error C202: 'P2': undefined identifier
+..\BSP\Src\interrupt.c(10): error C202: 'TI': undefined identifier
+..\BSP\Src\interrupt.c(12): error C202: 'TI': undefined identifier
+..\BSP\Src\interrupt.c(13): error C202: 'busy_bit': undefined identifier
+..\BSP\Src\interrupt.c(16): error C202: 'RI': undefined identifier
+..\BSP\Src\interrupt.c(18): error C202: 'RI': undefined identifier
+..\BSP\Src\interrupt.c(24): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(26): error C202: 'TL1': undefined identifier
+..\BSP\Src\interrupt.c(27): error C202: 'TH1': undefined identifier
+..\BSP\Src\interrupt.c(31): error C202: 'TR1': undefined identifier
+..\BSP\Src\interrupt.c(32): error C202: 'ET1': undefined identifier
+..\BSP\Src\interrupt.c(43): error C202: 'power_bit': undefined identifier
+..\BSP\Src\interrupt.c(45): error C202: 'channel_num': undefined identifier
+..\BSP\Src\interrupt.c(47): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(47): error C202: 'tempchannel2': undefined identifier
+..\BSP\Src\interrupt.c(47): error C202: 'tempchannel3': undefined identifier
+..\BSP\Src\interrupt.c(48): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(48): error C202: 'tempchannel2': undefined identifier
+..\BSP\Src\interrupt.c(48): error C202: 'tempchannel3': undefined identifier
+..\BSP\Src\interrupt.c(49): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(49): error C202: 'tempchannel2': undefined identifier
+..\BSP\Src\interrupt.c(49): error C202: 'tempchannel3': undefined identifier
+..\BSP\Src\interrupt.c(50): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(50): error C202: 'tempchannel2': undefined identifier
+..\BSP\Src\interrupt.c(50): error C202: 'tempchannel3': undefined identifier
+..\BSP\Src\interrupt.c(51): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(51): error C202: 'tempchannel2': undefined identifier
+..\BSP\Src\interrupt.c(51): error C202: 'tempchannel3': undefined identifier
+..\BSP\Src\interrupt.c(52): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(52): error C202: 'tempchannel2': undefined identifier
+..\BSP\Src\interrupt.c(52): error C202: 'tempchannel3': undefined identifier
+..\BSP\Src\interrupt.c(53): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(53): error C202: 'tempchannel2': undefined identifier
+..\BSP\Src\interrupt.c(53): error C202: 'tempchannel3': undefined identifier
+..\BSP\Src\interrupt.c(58): error C202: 'TL1': undefined identifier
+..\BSP\Src\interrupt.c(59): error C202: 'TH1': undefined identifier
+..\BSP\Src\interrupt.c(64): error C202: 'tempchannel1': undefined identifier
+..\BSP\Src\interrupt.c(65): error C202: 'TR1': undefined identifier
+..\BSP\Src\interrupt.c(66): error C202: 'ET1': undefined identifier
+..\BSP\Src\interrupt.c(81): error C202: 'delay_bit1': undefined identifier
+..\BSP\Src\interrupt.c(87): error C202: 'delay_bit1': undefined identifier
+..\BSP\Src\interrupt.c(88): error C202: 'delay_bit2': undefined identifier
+..\BSP\Src\interrupt.c(89): error C202: 'delay_bit3': undefined identifier
+..\BSP\Src\interrupt.c(92): error C202: 'delay_bit1': undefined identifier
+..\BSP\Src\interrupt.c(103): error C202: 'fan_dis_bit': undefined identifier
+..\BSP\Src\interrupt.c(110): error C202: 'temp_dis_bit': undefined identifier
+..\BSP\Src\interrupt.c(118): error C202: 'P0': undefined identifier
+..\BSP\Src\interrupt.c(141): error C202: 'buzzer_bit': undefined identifier
+..\BSP\Src\interrupt.c(147): error C202: 'buzzer': undefined identifier
+..\BSP\Src\interrupt.c(151): error C202: 'scan_stop_bit': undefined identifier
+..\BSP\Src\interrupt.c(156): error C202: 'scan_start_bit': undefined identifier
+..\BSP\Src\interrupt.c(157): error C202: 'scan_stop_bit': undefined identifier
+..\BSP\Src\interrupt.c(162): error C202: 'P07': undefined identifier
+..\BSP\Src\interrupt.c(164): error C202: 'external_24bit': undefined identifier
+..\BSP\Src\interrupt.c(165): error C202: 'previous_value': undefined identifier
+..\BSP\Src\interrupt.c(167): error C202: 'P07': undefined identifier
+..\BSP\Src\interrupt.c(169): error C202: 'external_24bit': undefined identifier
+..\BSP\Src\interrupt.c(170): error C202: 'previous_value': undefined identifier
+..\BSP\Src\interrupt.c(176): error C202: 'power_bit': undefined identifier
+..\BSP\Src\interrupt.c(178): error C202: 'ET1': undefined identifier
+..\BSP\Src\interrupt.c(182): error C202: 'ET1': undefined identifier
+..\BSP\Src\interrupt.c(185): error C202: 'tim1_t': undefined identifier
+compiling serial_comport.c...
+..\BSP\Src\serial_comport.c(1): error C141: syntax error near 'dat', expected ')'
+..\BSP\Src\serial_comport.c(3): error C202: 'busy_bit': undefined identifier
+..\BSP\Src\serial_comport.c(4): error C202: 'busy_bit': undefined identifier
+..\BSP\Src\serial_comport.c(5): error C202: 'SBUF': undefined identifier
+..\BSP\Src\serial_comport.c(8): error C141: syntax error near '*', expected ')'
+..\BSP\Src\serial_comport.c(10): error C202: 'sendstr': undefined identifier
+..\BSP\Src\serial_comport.c(12): error C202: 'sendstr': undefined identifier
+..\BSP\Src\serial_comport.c(18): error C202: 'SBUF': undefined identifier
+..\BSP\Src\serial_comport.c(19): error C202: 'TI': undefined identifier
+..\BSP\Src\serial_comport.c(20): error C202: 'TI': undefined identifier
 compiling sync.c...
-..\Emembed\Src\sync.c(1): warning C318: can't open file 'STC15W4Kxx.h'
-..\Emembed\Src\sync.c(2): warning C318: can't open file 'stdint.h'
-..\Emembed\Src\sync.c(3): warning C318: can't open file 'sync.h'
-..\Emembed\Src\sync.c(4): warning C318: can't open file 'timer.h'
-..\Emembed\Src\sync.c(5): warning C318: can't open file 'key.h'
 ..\Emembed\Src\sync.c(6): warning C318: can't open file 'pwm.h'
-..\Emembed\Src\sync.c(7): warning C318: can't open file 'ntc.h'
 ..\Emembed\Src\sync.c(8): warning C318: can't open file 'screen.h'
-..\Emembed\Src\sync.c(13): error C202: 'sync_bit': undefined identifier
-..\Emembed\Src\sync.c(16): error C202: 'external_24bit': undefined identifier
-..\Emembed\Src\sync.c(18): error C202: 'power_bit': undefined identifier
 ..\Emembed\Src\sync.c(19): error C202: 'DIS_ON': undefined identifier
-..\Emembed\Src\sync.c(20): error C202: 'wind_bit': undefined identifier
-..\Emembed\Src\sync.c(21): error C202: 'delay_bit1': undefined identifier
-..\Emembed\Src\sync.c(22): error C202: 'delay_bit2': undefined identifier
-..\Emembed\Src\sync.c(26): error C202: 'delay_bit2': undefined identifier
-..\Emembed\Src\sync.c(27): error C202: 'power_bit': undefined identifier
 ..\Emembed\Src\sync.c(28): error C202: 'DIS_OFF': undefined identifier
-..\Emembed\Src\sync.c(29): error C202: 'wind_bit': undefined identifier
 Target not created.
 Build Time Elapsed:  00:00:01

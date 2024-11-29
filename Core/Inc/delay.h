@@ -1,8 +1,9 @@
-#ifndef __UART_H_
-#define __UART_H_
+#ifndef __DELAY_H_
+#define __DELAY_H_
 
-void Uart1Init();
-void Uart1Sendbyte(unsigned char dat);
-void Uart1SendStr(unsigned char *sendstr);
+#include "sys.h"
+
+void delay_ms( uint16_t time );	
+void delay_us( uint16_t time );
 
 #endif 

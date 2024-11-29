@@ -1,0 +1,42 @@
+C51 COMPILER V9.60.7.0   PWM                                                               11/29/2024 16:35:19 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE PWM
+OBJECT MODULE PLACED IN ..\Output\pwm.obj
+COMPILER INVOKED BY: D:\APP\Keil_v5\C51\BIN\C51.EXE ..\Core\Src\pwm.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(..\Drivers;.
+                    -.\BSP\Inc;..\Core\Inc;..\Emembed\Inc;..\Middlewares;..\SYSTEM) DEBUG OBJECTEXTEND PRINT(.\Listings\pwm.lst) OBJECT(..\Ou
+                    -tput\pwm.obj)
+
+line level    source
+
+   1          #include "pwm.h"
+   2          
+   3          #define CYCLE 4096
+   4          
+   5          void PWM5Init( void )
+   6          {
+   7   1          PWMCFG = 0x08;              //配置PWM5的输出初始电平为高电平
+   8   1          PWMCKS = 0x0b;              //选择PWM的时钟为Fosc/12
+   9   1          
+  10   1          PWMC = CYCLE;               //设置PWM周期 PWMCH PWMCL
+  11   1          
+  12   1          PWM5T1 = 0;                 //设置PWM5第1次反转的PWM计数
+  13   1          PWM5T2 = 10;                //设置PWM5第2次反转的PWM计数 占空比为(PWM5T2-PWM5T1)/PWMC
+  14   1                               
+  15   1          PWM5CR = 0x00;              //选择PWM5输出到P2.3,不使能PWM5中断          
+  16   1      }
+  17          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     34    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,60 @@
+C51 COMPILER V9.60.7.0   ELECTRIC_CRL                                                      11/29/2024 16:35:20 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE ELECTRIC_CRL
+OBJECT MODULE PLACED IN ..\Output\electric_crl.obj
+COMPILER INVOKED BY: D:\APP\Keil_v5\C51\BIN\C51.EXE ..\Emembed\Src\electric_crl.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(
+                    -..\Drivers;..\BSP\Inc;..\Core\Inc;..\Emembed\Inc;..\Middlewares;..\SYSTEM) DEBUG OBJECTEXTEND PRINT(.\Listings\electric_
+                    -crl.lst) OBJECT(..\Output\electric_crl.obj)
+
+line level    source
+
+   1          
+   2          //uint8_t power_on()
+   3          //{
+   4          //    if(scan_start_bit == 1)
+   5          //    {
+   6          //        if(key_val == PowerKey)
+   7          //        {
+   8          //            return 0;
+   9          //        }
+  10          //    }
+  11          //    return 1;
+  12          //}
+  13          
+  14          //void power_off()
+  15          //{
+  16          //    uint8_t continue_cnt;
+  17          //    if(scan_start_bit == 1)
+  18          //    {
+  19          //        continue_cnt = 100;
+  20          //        while((key_val==PowerKey)&&(continue_cnt>0))
+  21          //        {
+  22          //            continue_cnt--; 
+  23          //            delay_ms(10);
+  24          //        }
+  25          //        if(continue_cnt == 0)           //长按1s判断，开启同步 
+  26          //        {
+  27          //            lcd_clear();
+  28          //            power_bit = 0;
+  29          //            sun_dis(DIS_OFF);
+  30          //            PWMStop();
+  31          //            on_off = 1;
+  32          //        }
+  33          //    }
+  34          
+  35          //}
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
